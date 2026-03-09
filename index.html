@@ -2,312 +2,612 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manoj Tharayil | Test Automation Leader</title>
 
 <style>
+:root{
+  --bg:#f8fafc;
+  --surface:#ffffff;
+  --surface-2:#eef2ff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --primary:#2563eb;
+  --primary-dark:#1d4ed8;
+  --border:#e5e7eb;
+  --shadow:0 10px 30px rgba(15, 23, 42, 0.08);
+  --radius:18px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-font-family: Arial, Helvetica, sans-serif;
-margin:0;
-background:#f4f6f8;
-color:#333;
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(to bottom, #f8fafc, #eef2ff 35%, #f8fafc 100%);
+  color:var(--text);
+  line-height:1.6;
 }
 
-header{
-background:#1f2937;
-color:white;
-padding:40px;
-text-align:center;
+a{
+  color:var(--primary);
+  text-decoration:none;
 }
 
-header h1{
-margin:0;
-font-size:36px;
-}
-
-header p{
-font-size:18px;
-margin-top:10px;
+a:hover{
+  color:var(--primary-dark);
 }
 
 .container{
-max-width:1000px;
-margin:auto;
-padding:30px;
+  width:min(1100px, calc(100% - 32px));
+  margin:auto;
+}
+
+header{
+  background:linear-gradient(135deg, #111827, #1f2937 55%, #2563eb);
+  color:white;
+  padding:60px 0 50px;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.profile-wrap{
+  text-align:center;
+}
+
+.profile-photo{
+  width:220px;
+  height:220px;
+  object-fit:cover;
+  border-radius:50%;
+  border:6px solid rgba(255,255,255,0.9);
+  box-shadow:0 18px 40px rgba(0,0,0,0.28);
+  background:#d1d5db;
+}
+
+.hero-text h1{
+  margin:0 0 12px;
+  font-size:44px;
+  line-height:1.1;
+}
+
+.hero-tagline{
+  font-size:22px;
+  font-weight:bold;
+  margin:0 0 12px;
+}
+
+.hero-summary{
+  font-size:17px;
+  color:rgba(255,255,255,0.9);
+  max-width:720px;
+  margin:0 0 24px;
+}
+
+.hero-badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:24px;
+}
+
+.hero-badges span{
+  background:rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:14px;
+  backdrop-filter:blur(4px);
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:bold;
+  transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.btn-primary{
+  background:#ffffff;
+  color:#111827;
+}
+
+.btn-secondary{
+  background:transparent;
+  color:white;
+  border:1px solid rgba(255,255,255,0.35);
+}
+
+main{
+  padding:40px 0 60px;
 }
 
 section{
-margin-bottom:40px;
+  margin-bottom:34px;
 }
 
-h2{
-border-bottom:3px solid #3b82f6;
-padding-bottom:8px;
+.section-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:28px;
+}
+
+.section-title{
+  margin:0 0 18px;
+  font-size:28px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.section-title::before{
+  content:"";
+  width:8px;
+  height:30px;
+  border-radius:999px;
+  background:var(--primary);
+  display:inline-block;
+}
+
+.quick-stats{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+}
+
+.stat{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+
+.stat h3{
+  margin:0;
+  font-size:30px;
+  color:var(--primary);
+}
+
+.stat p{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:24px;
+}
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
 .skills span{
-display:inline-block;
-background:#e5e7eb;
-padding:8px 12px;
-margin:5px;
-border-radius:6px;
-font-size:14px;
+  display:inline-block;
+  background:var(--surface-2);
+  color:#1e3a8a;
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:14px;
+  border:1px solid #c7d2fe;
+  font-weight:bold;
+}
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:18px;
 }
 
 .project{
-background:white;
-padding:15px;
-margin-top:10px;
-border-radius:8px;
-box-shadow:0 2px 4px rgba(0,0,0,0.1);
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  box-shadow:var(--shadow);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.links a{
-display:inline-block;
-margin-right:20px;
-font-weight:bold;
-color:#2563eb;
-text-decoration:none;
+.project:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 34px rgba(15, 23, 42, 0.12);
 }
 
-.project a{
-display:inline-block;
-margin-top:10px;
-color:#2563eb;
-font-weight:bold;
-text-decoration:none;
+.project h3{
+  margin-top:0;
+  margin-bottom:10px;
+  font-size:20px;
+}
+
+.project p{
+  margin:0 0 12px;
+  color:var(--muted);
+}
+
+.project .tag{
+  display:inline-block;
+  font-size:12px;
+  font-weight:bold;
+  color:#1d4ed8;
+  background:#dbeafe;
+  padding:6px 10px;
+  border-radius:999px;
+  margin-bottom:12px;
+}
+
+.achievement-list{
+  margin:0;
+  padding-left:20px;
+}
+
+.achievement-list li{
+  margin-bottom:10px;
+}
+
+.links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.link-pill{
+  display:inline-block;
+  padding:12px 16px;
+  background:#eff6ff;
+  color:#1d4ed8;
+  border:1px solid #bfdbfe;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+.github-card{
+  overflow:hidden;
+}
+
+.github-card img{
+  width:100%;
+  display:block;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+
+.contact-box p{
+  margin:10px 0;
 }
 
 footer{
-text-align:center;
-padding:20px;
-background:#111827;
-color:white;
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:24px;
+  font-size:14px;
 }
 
+@media (max-width: 980px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-summary{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-badges,
+  .hero-actions{
+    justify-content:center;
+  }
+
+  .quick-stats,
+  .project-grid,
+  .two-col{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width: 700px){
+  .hero-text h1{
+    font-size:34px;
+  }
+
+  .hero-tagline{
+    font-size:18px;
+  }
+
+  .quick-stats,
+  .project-grid,
+  .two-col{
+    grid-template-columns:1fr;
+  }
+
+  .section-card,
+  .stat,
+  .project{
+    padding:20px;
+  }
+
+  .profile-photo{
+    width:180px;
+    height:180px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Manoj Tharayil</h1>
-<p>Test Automation Leader | QA Practice Lead | ISTQB Certified</p>
-<p>24 Years Experience in Software Testing & Automation</p>
+  <div class="container hero">
+    <div class="profile-wrap">
+      <img src="Manoj Profile Picture.jpg" alt="Manoj Tharayil" class="profile-photo">
+    </div>
+
+    <div class="hero-text">
+      <h1>Manoj Tharayil</h1>
+      <p class="hero-tagline">Test Automation Leader | QA Practice Lead | ISTQB Certified</p>
+      <p class="hero-summary">
+        Senior quality engineering leader with 24 years of experience delivering enterprise-scale
+        software testing, automation frameworks, QA strategy, and transformation programs across
+        banking, finance, government, and large enterprise platforms.
+      </p>
+
+      <div class="hero-badges">
+        <span>24 Years Experience</span>
+        <span>15+ Years in Test Automation</span>
+        <span>Australian Citizen</span>
+        <span>Immediate Availability</span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/manojtharayil" target="_blank">Connect on LinkedIn</a>
+        <a class="btn btn-secondary" href="https://github.com/manojth" target="_blank">View GitHub</a>
+        <a class="btn btn-secondary" href="#projects">View Projects</a>
+      </div>
+    </div>
+  </div>
 </header>
 
-<div class="container">
+<main>
+  <div class="container">
 
-<section>
-<h2>About Me</h2>
+    <section>
+      <div class="quick-stats">
+        <div class="stat">
+          <h3>24+</h3>
+          <p>Years in software testing</p>
+        </div>
+        <div class="stat">
+          <h3>15+</h3>
+          <p>Years in automation leadership</p>
+        </div>
+        <div class="stat">
+          <h3>3</h3>
+          <p>Core focus areas: UI, API, CI/CD</p>
+        </div>
+        <div class="stat">
+          <h3>100%</h3>
+          <p>Committed to quality engineering excellence</p>
+        </div>
+      </div>
+    </section>
 
-<p>
-I am a senior Test Automation leader with over 24 years of experience in software quality engineering,
-specializing in automation frameworks, enterprise testing strategies, and large-scale delivery programs.
-</p>
+    <section>
+      <div class="section-card">
+        <h2 class="section-title">About Me</h2>
+        <p>
+          I am a senior Test Automation leader specializing in automation architecture, enterprise QA strategy,
+          test process improvement, and scalable delivery practices. My background includes leading teams,
+          designing frameworks, improving release confidence, and driving quality across large transformation initiatives.
+        </p>
+        <p>
+          I bring a combination of hands-on technical capability and leadership experience, with strong expertise in
+          Selenium, Playwright, C#, API testing, CI/CD integration, and quality engineering governance.
+        </p>
+      </div>
+    </section>
 
-<p>
-I have led automation initiatives across banking, finance, government, and enterprise platforms,
-building scalable frameworks and mentoring high-performing QA teams.
-</p>
+    <section>
+      <div class="two-col">
+        <div class="section-card">
+          <h2 class="section-title">Key Achievements</h2>
+          <ul class="achievement-list">
+            <li>24+ years of experience in software testing and quality engineering.</li>
+            <li>15+ years leading automation initiatives across enterprise programs.</li>
+            <li>Designed scalable Selenium and C# automation frameworks for enterprise systems.</li>
+            <li>Reduced manual regression effort significantly through automation strategy and reusable frameworks.</li>
+            <li>Led, coached, and mentored QA teams across multiple delivery streams and transformation programs.</li>
+          </ul>
+        </div>
 
-</section>
+        <div class="section-card">
+          <h2 class="section-title">Core Skills</h2>
+          <div class="skills">
+            <span>Selenium WebDriver</span>
+            <span>Playwright</span>
+            <span>C# Automation</span>
+            <span>API Testing</span>
+            <span>SpecFlow</span>
+            <span>REST APIs</span>
+            <span>Azure DevOps</span>
+            <span>Jenkins</span>
+            <span>CI/CD</span>
+            <span>Test Architecture</span>
+            <span>Automation Framework Design</span>
+            <span>Quality Engineering</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section>
-<h2>Key Achievements</h2>
+    <section id="projects">
+      <div class="section-card">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="project-grid">
+          <div class="project">
+            <div class="tag">Featured</div>
+            <h3>Enterprise Automation Framework</h3>
+            <p>
+              Designed and implemented a scalable Selenium + C# framework supporting UI and API testing
+              across enterprise platforms.
+            </p>
+          </div>
 
-<div class="project">
-<ul>
-<li>24+ years of experience in Software Testing and Quality Engineering</li>
-<li>15+ years leading Test Automation initiatives</li>
-<li>Designed scalable Selenium + C# automation frameworks for enterprise systems</li>
-<li>Reduced manual regression testing by up to 70% through automation</li>
-<li>Led and mentored QA automation teams across multiple programs</li>
-</ul>
-</div>
+          <div class="project">
+            <div class="tag">Featured</div>
+            <h3>Automation Strategy for Transformation Programs</h3>
+            <p>
+              Led automation initiatives for large transformation programs, improving release confidence
+              and reducing regression effort.
+            </p>
+          </div>
 
-</section>
+          <div class="project">
+            <div class="tag">Featured</div>
+            <h3>Observability in Test Automation</h3>
+            <p>
+              Introduced monitoring and observability approaches to surface production issues,
+              performance bottlenecks, and infrastructure failures earlier.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section>
-<h2>Core Skills</h2>
+    <section>
+      <div class="section-card">
+        <h2 class="section-title">Professional Projects</h2>
+        <div class="project-grid">
+          <div class="project">
+            <div class="tag">Professional</div>
+            <h3>Enterprise Test Automation Framework</h3>
+            <p>
+              Architected scalable UI and API automation frameworks using Selenium, C#, SpecFlow,
+              and REST APIs for enterprise applications.
+            </p>
+          </div>
 
-<div class="skills">
+          <div class="project">
+            <div class="tag">Professional</div>
+            <h3>CI/CD Test Automation Integration</h3>
+            <p>
+              Integrated automated test suites with Jenkins and Azure DevOps pipelines to support
+              continuous testing and faster, safer releases.
+            </p>
+          </div>
 
-<span>Selenium WebDriver</span>
-<span>Playwright</span>
-<span>C# Automation</span>
-<span>API Testing</span>
-<span>Test Architecture</span>
-<span>CI/CD</span>
-<span>Azure DevOps</span>
-<span>Jenkins</span>
-<span>SpecFlow</span>
-<span>REST APIs</span>
-<span>Automation Framework Design</span>
-<span>Quality Engineering</span>
+          <div class="project">
+            <div class="tag">Professional</div>
+            <h3>Automation Governance and QA Standards</h3>
+            <p>
+              Defined test automation standards, delivery practices, reporting, and quality metrics
+              across multiple enterprise QA teams.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <section>
+      <div class="section-card">
+        <h2 class="section-title">Personal Projects</h2>
+        <div class="project-grid">
+          <div class="project">
+            <div class="tag">Personal</div>
+            <h3>Malayalam Speech Transcription Tool</h3>
+            <p>
+              A browser-based tool that converts spoken Malayalam into Malayalam script using speech recognition,
+              designed for writers and storytellers.
+            </p>
+            <a href="https://github.com/manojth" target="_blank">View Project</a>
+          </div>
 
-</section>
+          <div class="project">
+            <div class="tag">Personal</div>
+            <h3>Automation Learning Labs</h3>
+            <p>
+              A collection of learning repositories demonstrating Selenium, Playwright,
+              framework design patterns, and API test automation.
+            </p>
+            <a href="https://github.com/manojth" target="_blank">View Project</a>
+          </div>
 
-<section>
-<h2>Featured Work</h2>
+          <div class="project">
+            <div class="tag">Personal</div>
+            <h3>Technical Testing Blog</h3>
+            <p>
+              Blog articles and insights covering software testing, automation strategy,
+              and quality engineering leadership.
+            </p>
+            <a href="https://manojtesting.blogspot.com/" target="_blank">Read Blog</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="project">
-<h3>Enterprise Automation Framework</h3>
-<p>
-Designed and implemented a scalable Selenium + C# automation framework
-supporting UI and API testing across enterprise systems.
-</p>
-</div>
+    <section>
+      <div class="two-col">
+        <div class="section-card github-card">
+          <h2 class="section-title">GitHub Activity</h2>
+          <img src="https://ghchart.rshah.org/manojth" alt="GitHub Contributions Chart">
+        </div>
 
-<div class="project">
-<h3>Automation Strategy for Transformation Programs</h3>
-<p>
-Led automation initiatives in large transformation programs,
-improving release confidence and reducing regression effort.
-</p>
-</div>
+        <div class="section-card">
+          <h2 class="section-title">Links</h2>
+          <div class="links">
+            <a class="link-pill" href="https://www.linkedin.com/in/manojtharayil" target="_blank">LinkedIn</a>
+            <a class="link-pill" href="https://github.com/manojth" target="_blank">GitHub</a>
+            <a class="link-pill" href="https://manojtesting.blogspot.com/" target="_blank">Blog</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="project">
-<h3>Observability in Test Automation</h3>
-<p>
-Implemented monitoring and observability techniques to detect failures,
-performance bottlenecks, and infrastructure issues early.
-</p>
-</div>
+    <section>
+      <div class="section-card contact-box">
+        <h2 class="section-title">Contact</h2>
+        <p><strong>Location:</strong> Melbourne, Australia</p>
+        <p><strong>Open to roles:</strong> Test Automation Lead | QA Manager | Automation Architect</p>
+        <p><strong>Best way to reach me:</strong> LinkedIn</p>
+      </div>
+    </section>
 
-</section>
-
-<section>
-<h2>Professional Projects</h2>
-
-<div class="project">
-<h3>Enterprise Test Automation Framework</h3>
-
-<p>
-Architected and implemented scalable Selenium and API automation frameworks
-using C#, SpecFlow, and REST APIs to support enterprise applications.
-</p>
-
-</div>
-
-<div class="project">
-<h3>CI/CD Test Automation Integration</h3>
-
-<p>
-Integrated automation suites with Jenkins and Azure DevOps pipelines
-to enable continuous testing and faster release cycles.
-</p>
-
-</div>
-
-<div class="project">
-<h3>Automation Governance</h3>
-
-<p>
-Defined automation standards, testing strategies, and quality metrics
-across multiple enterprise QA teams.
-</p>
-
-</div>
-
-</section>
-
-<section>
-<h2>Personal Projects</h2>
-
-<div class="project">
-<h3>Malayalam Speech Transcription Tool</h3>
-
-<p>
-A browser-based tool that converts spoken Malayalam into Malayalam script
-using Web Speech API for writers and storytellers.
-</p>
-
-<a href="https://github.com/manojth" target="_blank">
-View Project
-</a>
-
-</div>
-
-<div class="project">
-<h3>Automation Learning Labs</h3>
-
-<p>
-A collection of GitHub repositories demonstrating Selenium, Playwright,
-and API automation frameworks for learning and experimentation.
-</p>
-
-<a href="https://github.com/manojth" target="_blank">
-View Project
-</a>
-
-</div>
-
-<div class="project">
-<h3>Test Automation Blog</h3>
-
-<p>
-Technical blog sharing insights on automation frameworks,
-testing strategies, and software quality engineering.
-</p>
-
-<a href="https://manojtesting.blogspot.com" target="_blank">
-Read Blog
-</a>
-
-</div>
-
-</section>
-
-<section>
-<h2>GitHub Activity</h2>
-
-<img src="https://ghchart.rshah.org/manojth" alt="GitHub Contributions" style="width:100%;">
-
-</section>
-
-<section>
-<h2>Links</h2>
-
-<div class="links">
-
-<a href="https://www.linkedin.com/in/manojtharayil" target="_blank">
-LinkedIn
-</a>
-
-<a href="https://github.com/manojth" target="_blank">
-GitHub
-</a>
-
-<a href="https://manojtesting.blogspot.com" target="_blank">
-Blog
-</a>
-
-</div>
-
-</section>
-
-<section>
-<h2>Contact</h2>
-
-<div class="project">
-
-<p>Location: Melbourne, Australia</p>
-
-<p>Open to roles: Test Automation Lead | QA Manager | Automation Architect</p>
-
-<p>Best way to reach me: LinkedIn</p>
-
-</div>
-
-</section>
-
-</div>
+  </div>
+</main>
 
 <footer>
-<p>© 2026 Manoj Tharayil</p>
+  <p>© 2026 Manoj Tharayil</p>
 </footer>
 
 </body>
