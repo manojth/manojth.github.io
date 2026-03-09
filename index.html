@@ -1,215 +1,408 @@
-export default function Portfolio() {
-  const skills = [
-    "C#",
-    "Selenium WebDriver",
-    "Playwright",
-    "SpecFlow",
-    "API Testing",
-    "RestSharp",
-    "Azure DevOps",
-    "Jenkins",
-    "GitHub Actions",
-    "Test Architecture",
-    "CI/CD",
-    "Observability",
-    "Quality Engineering",
-    "Leadership"
-  ];
-
-  const highlights = [
-    {
-      title: "Automation Leadership",
-      text: "24 years in software testing with 15+ years in test automation, leading teams, frameworks, and enterprise delivery across banking, finance, government, and retail."
-    },
-    {
-      title: "Framework Design",
-      text: "Built scalable UI and API automation frameworks using C#, Selenium, Playwright, SpecFlow, and modern CI/CD practices."
-    },
-    {
-      title: "Production Quality Focus",
-      text: "Applied observability thinking to connect test failures with API latency, infrastructure bottlenecks, and deployment risk."
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manoj Tharayil | Test Automation Leader</title>
+  <style>
+    * {
+      box-sizing: border-box;
     }
-  ];
 
-  const projects = [
-    {
-      title: "Enterprise Test Automation Framework",
-      summary: "Designed a reusable automation framework for UI and API validation with reporting, maintainability, and faster regression coverage in mind.",
-      tags: ["C#", "Selenium", "SpecFlow", "API"]
-    },
-    {
-      title: "Playwright Modernization",
-      summary: "Introduced modern browser automation patterns to improve execution speed, reliability, and ease of maintenance for web regression suites.",
-      tags: ["Playwright", "CI/CD", "Quality"]
-    },
-    {
-      title: "Observability for Testing",
-      summary: "Mapped failing tests to backend signals like API latency, cache miss rates, and database stress to improve diagnosis and release confidence.",
-      tags: ["Observability", "Performance", "Production"]
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+      color: #e2e8f0;
+      line-height: 1.6;
     }
-  ];
 
-  return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
-      <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute -top-16 left-[-5%] h-72 w-72 rounded-full bg-sky-500 blur-3xl" />
-          <div className="absolute right-[-5%] top-24 h-80 w-80 rounded-full bg-indigo-500 blur-3xl" />
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 70px 0 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #7dd3fc;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 54px;
+      margin: 0 0 12px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #cbd5e1;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      font-size: 18px;
+      color: #cbd5e1;
+      max-width: 760px;
+    }
+
+    .button-group {
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 8px 10px 0 0;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #082f49;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .stats {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .stat-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .stat-label {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .card h2,
+    .card h3 {
+      color: #ffffff;
+      margin-top: 0;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .section-text {
+      color: #cbd5e1;
+      margin-bottom: 24px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      color: #bae6fd;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .tags {
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin: 6px 8px 0 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 24px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      color: #94a3b8;
+      padding: 40px 0 60px;
+      font-size: 14px;
+    }
+
+    a {
+      color: #7dd3fc;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid-3,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container hero">
+      <div>
+        <div class="badge">Test Automation Leader • Melbourne, Australia</div>
+        <h1>Manoj Tharayil</h1>
+        <div class="subtitle">QA Manager | Test Automation Practice Lead | ISTQB Certified</div>
+        <p class="intro">
+          I help organisations improve release confidence by building scalable automation frameworks,
+          leading quality engineering teams, and connecting testing outcomes with real production signals.
+        </p>
+
+        <div class="button-group">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/manojtharayil" target="_blank">View LinkedIn</a>
+          <a class="btn btn-secondary" href="https://github.com/manojth" target="_blank">View GitHub</a>
+          <a class="btn btn-secondary" href="https://manojtesting.blogspot.com/" target="_blank">Blog</a>
         </div>
-        <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="grid items-center gap-10 md:grid-cols-[1.3fr_0.7fr]">
-            <div>
-              <p className="mb-4 inline-block rounded-full border border-sky-400/30 bg-sky-400/10 px-4 py-1 text-sm text-sky-300">
-                Test Automation Leader • Melbourne, Australia
-              </p>
-              <h1 className="max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">
-                Manoj Tharayil
-              </h1>
-              <p className="mt-4 max-w-3xl text-lg text-slate-300 md:text-xl">
-                QA Manager | Test Automation Practice Lead | ISTQB Certified
-              </p>
-              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">
-                I help organisations improve release confidence by building scalable automation frameworks,
-                leading quality engineering teams, and connecting testing outcomes with real production signals.
-              </p>
+      </div>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="https://www.linkedin.com/in/manojtharayil"
-                  target="_blank"
-                  className="rounded-2xl bg-sky-500 px-5 py-3 font-semibold text-slate-950 shadow-lg shadow-sky-500/20 transition hover:scale-[1.02]"
-                  rel="noreferrer"
-                >
-                  View LinkedIn
-                </a>
-                <a
-                  href="https://github.com/manojth"
-                  target="_blank"
-                  className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-white transition hover:bg-white/10"
-                  rel="noreferrer"
-                >
-                  View GitHub
-                </a>
-                <a
-                  href="https://manojtesting.blogspot.com                  target="_blank"
-                  className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-white transition hover:bg-white/10"
-                  rel="noreferrer"
-                >
-                  Blog
-                </a>
-              </div>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
-              <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-1">
-                <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-                  <p className="text-sm text-slate-400">Experience</p>
-                  <p className="mt-2 text-3xl font-bold">24 Years</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-                  <p className="text-sm text-slate-400">Automation</p>
-                  <p className="mt-2 text-3xl font-bold">15+ Years</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-                  <p className="text-sm text-slate-400">Work Rights</p>
-                  <p className="mt-2 text-2xl font-bold">Australian Citizen</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-                  <p className="text-sm text-slate-400">Availability</p>
-                  <p className="mt-2 text-2xl font-bold">Immediate</p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-label">Experience</div>
+          <div class="stat-value">24 Years</div>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-6 md:grid-cols-3">
-          {highlights.map((item) => (
-            <div key={item.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl">
-              <h2 className="text-xl font-semibold">{item.title}</h2>
-              <p className="mt-3 leading-7 text-slate-300">{item.text}</p>
-            </div>
-          ))}
+        <div class="stat-box">
+          <div class="stat-label">Automation</div>
+          <div class="stat-value">15+ Years</div>
         </div>
-      </section>
+        <div class="stat-box">
+          <div class="stat-label">Work Rights</div>
+          <div class="stat-value" style="font-size:22px;">Australian Citizen</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Availability</div>
+          <div class="stat-value" style="font-size:22px;">Immediate</div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      <section className="mx-auto max-w-6xl px-6 py-6">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-          <h2 className="text-2xl font-bold md:text-3xl">Core Skills</h2>
-          <p className="mt-3 max-w-3xl text-slate-300">
-            Technical depth across browser automation, API validation, CI/CD, framework architecture, and enterprise quality engineering.
+  <section>
+    <div class="container grid-3">
+      <div class="card">
+        <h3>Automation Leadership</h3>
+        <p>
+          24 years in software testing with 15+ years in test automation, leading teams,
+          frameworks, and enterprise delivery across banking, finance, government, and retail.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Framework Design</h3>
+        <p>
+          Built scalable UI and API automation frameworks using C#, Selenium, Playwright,
+          SpecFlow, and modern CI/CD practices.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Production Quality Focus</h3>
+        <p>
+          Applied observability thinking to connect test failures with API latency,
+          infrastructure bottlenecks, and deployment risk.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container card">
+      <div class="section-title">Core Skills</div>
+      <div class="section-text">
+        Technical depth across browser automation, API validation, CI/CD, framework architecture,
+        and enterprise quality engineering.
+      </div>
+      <div class="skills">
+        <span class="skill">C#</span>
+        <span class="skill">Selenium WebDriver</span>
+        <span class="skill">Playwright</span>
+        <span class="skill">SpecFlow</span>
+        <span class="skill">API Testing</span>
+        <span class="skill">RestSharp</span>
+        <span class="skill">Azure DevOps</span>
+        <span class="skill">Jenkins</span>
+        <span class="skill">GitHub Actions</span>
+        <span class="skill">Test Architecture</span>
+        <span class="skill">CI/CD</span>
+        <span class="skill">Observability</span>
+        <span class="skill">Quality Engineering</span>
+        <span class="skill">Leadership</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">Featured Projects</div>
+      <div class="section-text">
+        Representative portfolio items you can later replace with real repo links and case studies.
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Enterprise Test Automation Framework</h3>
+          <p>
+            Designed a reusable automation framework for UI and API validation with reporting,
+            maintainability, and faster regression coverage in mind.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm font-medium text-sky-200"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <h2 className="text-2xl font-bold md:text-3xl">Featured Projects</h2>
-            <p className="mt-3 text-slate-300">Representative portfolio items you can later replace with real repo links and case studies.</p>
+          <div class="tags">
+            <span class="tag">C#</span>
+            <span class="tag">Selenium</span>
+            <span class="tag">SpecFlow</span>
+            <span class="tag">API</span>
           </div>
         </div>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {projects.map((project) => (
-            <article key={project.title} className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/8 to-white/5 p-6 shadow-xl">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-              <p className="mt-4 leading-7 text-slate-300">{project.summary}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-200">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 pb-20">
-        <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <h2 className="text-2xl font-bold md:text-3xl">What I Bring</h2>
-            <ul className="mt-5 space-y-4 text-slate-300">
-              <li>• Enterprise-scale automation strategy and delivery leadership</li>
-              <li>• Strong hands-on depth in C#, Selenium, Playwright, API testing, and CI/CD</li>
-              <li>• Practical quality engineering focused on risk reduction and faster releases</li>
-              <li>• Coaching, stakeholder communication, and uplift of test maturity</li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-sky-500/10 p-8">
-            <h2 className="text-2xl font-bold">Let’s Connect</h2>
-            <p className="mt-4 leading-7 text-slate-200">
-              Open to Automation Test Lead, QA Manager, Quality Engineering Lead, and Test Architecture opportunities.
-            </p>
-            <div className="mt-6 space-y-3 text-slate-100">
-              <p>
-                LinkedIn: <a className="text-sky-300 underline" href="https://www.linkedin.com/in/manojtharayil" target="_blank" rel="noreferrer">manojtharayil</a>
-              </p>
-              <p>
-                GitHub: <a className="text-sky-300 underline" href="https://github.com/manojth" target="_blank" rel="noreferrer">manojth</a>
-              </p>
-              <p>
-                Blog: <a className="text-sky-300 underline" href="https://manojtesting.blogspot.com target="_blank" rel="noreferrer">manojtesting.blogspot.com</a>
-              </p>
-            </div>
+        <div class="card">
+          <h3>Playwright Modernization</h3>
+          <p>
+            Introduced modern browser automation patterns to improve execution speed,
+            reliability, and ease of maintenance for web regression suites.
+          </p>
+          <div class="tags">
+            <span class="tag">Playwright</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">Quality</span>
           </div>
         </div>
-      </section>
-    </main>
-  );
-}
+
+        <div class="card">
+          <h3>Observability for Testing</h3>
+          <p>
+            Mapped failing tests to backend signals like API latency, cache miss rates,
+            and database stress to improve diagnosis and release confidence.
+          </p>
+          <div class="tags">
+            <span class="tag">Observability</span>
+            <span class="tag">Performance</span>
+            <span class="tag">Production</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container two-col">
+      <div class="card">
+        <div class="section-title" style="font-size:28px;">What I Bring</div>
+        <ul>
+          <li>Enterprise-scale automation strategy and delivery leadership</li>
+          <li>Strong hands-on depth in C#, Selenium, Playwright, API testing, and CI/CD</li>
+          <li>Practical quality engineering focused on risk reduction and faster releases</li>
+          <li>Coaching, stakeholder communication, and uplift of test maturity</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="section-title" style="font-size:28px;">Let’s Connect</div>
+        <p>
+          Open to Automation Test Lead, QA Manager, Quality Engineering Lead,
+          and Test Architecture opportunities.
+        </p>
+        <p>
+          LinkedIn:
+          <a href="https://www.linkedin.com/in/manojtharayil" target="_blank">manojtharayil</a>
+        </p>
+        <p>
+          GitHub:
+          <a href="https://github.com/manojth" target="_blank">manojth</a>
+        </p>
+        <p>
+          Blog:
+          <a href="https://manojtesting.blogspot.com/" target="_blank">manojtesting.blogspot.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Manoj Tharayil
+  </footer>
+</body>
+</html>
