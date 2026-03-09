@@ -92,7 +92,14 @@ header{
   font-size:17px;
   color:rgba(255,255,255,0.9);
   max-width:720px;
+  margin:0 0 18px;
+}
+
+.hero-focus{
+  font-size:15px;
+  color:rgba(255,255,255,0.85);
   margin:0 0 24px;
+  font-weight:bold;
 }
 
 .hero-badges{
@@ -224,10 +231,32 @@ section{
   font-weight:bold;
 }
 
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:14px;
+  margin-top:8px;
+}
+
+.tech-item{
+  background:#f8fbff;
+  border:1px solid #dbeafe;
+  border-radius:14px;
+  padding:16px;
+  text-align:center;
+  font-weight:bold;
+  color:#1e3a8a;
+  box-shadow:0 6px 18px rgba(37, 99, 235, 0.06);
+}
+
 .project-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
   gap:18px;
+}
+
+.project-grid.case-studies{
+  grid-template-columns:repeat(2, 1fr);
 }
 
 .project{
@@ -332,7 +361,9 @@ footer{
 
   .quick-stats,
   .project-grid,
-  .two-col{
+  .two-col,
+  .tech-grid,
+  .project-grid.case-studies{
     grid-template-columns:1fr 1fr;
   }
 }
@@ -348,7 +379,9 @@ footer{
 
   .quick-stats,
   .project-grid,
-  .two-col{
+  .two-col,
+  .tech-grid,
+  .project-grid.case-studies{
     grid-template-columns:1fr;
   }
 
@@ -382,6 +415,9 @@ footer{
         software testing, automation frameworks, QA strategy, and transformation programs across
         banking, finance, government, and large enterprise platforms.
       </p>
+      <p class="hero-focus">
+        Automation Architecture | CI/CD Quality Engineering | Enterprise QA Leadership
+      </p>
 
       <div class="hero-badges">
         <span>24 Years Experience</span>
@@ -391,7 +427,8 @@ footer{
       </div>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/manojtharayil" target="_blank">Connect on LinkedIn</a>
+        <a class="btn btn-primary" href="Manoj_Tharayil_Resume.pdf" target="_blank">Download Resume</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/manojtharayil" target="_blank">Connect on LinkedIn</a>
         <a class="btn btn-secondary" href="https://github.com/manojth" target="_blank">View GitHub</a>
         <a class="btn btn-secondary" href="#projects">View Projects</a>
       </div>
@@ -413,12 +450,12 @@ footer{
           <p>Years in automation leadership</p>
         </div>
         <div class="stat">
-          <h3>3</h3>
-          <p>Core focus areas: UI, API, CI/CD</p>
+          <h3>35</h3>
+          <p>Largest team supported</p>
         </div>
         <div class="stat">
-          <h3>100%</h3>
-          <p>Committed to quality engineering excellence</p>
+          <h3>BDD</h3>
+          <p>Framework and quality engineering focus</p>
         </div>
       </div>
     </section>
@@ -445,9 +482,9 @@ footer{
           <ul class="achievement-list">
             <li>24+ years of experience in software testing and quality engineering.</li>
             <li>15+ years leading automation initiatives across enterprise programs.</li>
-            <li>Designed scalable Selenium and C# automation frameworks for enterprise systems.</li>
-            <li>Reduced manual regression effort significantly through automation strategy and reusable frameworks.</li>
-            <li>Led, coached, and mentored QA teams across multiple delivery streams and transformation programs.</li>
+            <li>Built scalable Selenium, C#, SpecFlow, and API automation frameworks.</li>
+            <li>Led UAT, SIT, and enterprise test delivery across finance, banking, and government programs.</li>
+            <li>Built teams, mentored engineers, and uplifted QA capability across delivery streams.</li>
           </ul>
         </div>
 
@@ -467,6 +504,30 @@ footer{
             <span>Automation Framework Design</span>
             <span>Quality Engineering</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-card">
+        <h2 class="section-title">Technologies I Work With</h2>
+        <div class="tech-grid">
+          <div class="tech-item">Selenium WebDriver</div>
+          <div class="tech-item">Playwright</div>
+          <div class="tech-item">C#</div>
+          <div class="tech-item">SpecFlow</div>
+          <div class="tech-item">RestSharp</div>
+          <div class="tech-item">API Automation</div>
+          <div class="tech-item">Azure DevOps</div>
+          <div class="tech-item">CI/CD Pipelines</div>
+          <div class="tech-item">Jenkins</div>
+          <div class="tech-item">SQL Server</div>
+          <div class="tech-item">Oracle</div>
+          <div class="tech-item">Docker</div>
+          <div class="tech-item">BrowserStack</div>
+          <div class="tech-item">JMeter</div>
+          <div class="tech-item">Gatling</div>
+          <div class="tech-item">GitHub Copilot</div>
         </div>
       </div>
     </section>
@@ -535,6 +596,67 @@ footer{
               across multiple enterprise QA teams.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-card">
+        <h2 class="section-title">Automation Case Studies</h2>
+        <div class="project-grid case-studies">
+
+          <div class="project">
+            <div class="tag">Enterprise Transformation</div>
+            <h3>MMSG – Automation Centre of Excellence</h3>
+            <p>
+              Led the automation strategy and delivery across multiple enterprise-level projects at
+              McMillan Shakespeare Group, supporting teams of up to 35 professionals.
+            </p>
+            <p>
+              Established the organisation’s first BDD-based Automation Centre of Excellence and
+              designed scalable frameworks using C#, SpecFlow and RestSharp with Azure DevOps CI/CD integration.
+            </p>
+          </div>
+
+          <div class="project">
+            <div class="tag">FinTech Automation</div>
+            <h3>Moula – End-to-End Automation Framework</h3>
+            <p>
+              Implemented UI and API automation frameworks from scratch using Selenium, C#, SpecFlow,
+              RestSharp, and Azure-based delivery pipelines.
+            </p>
+            <p>
+              Delivered the initial UI BDD framework in a short timeframe and then built the API framework
+              and CI pipeline to provide rapid quality feedback to stakeholders.
+            </p>
+          </div>
+
+          <div class="project">
+            <div class="tag">Banking Payments Platform</div>
+            <h3>UBank – New Payments Platform Testing</h3>
+            <p>
+              Supported a major New Payments Platform initiative for UBank within NAB’s digital banking ecosystem,
+              working across a program involving modern cloud deployment and enterprise integration.
+            </p>
+            <p>
+              Automated microservices testing, led performance testing activities, and identified high severity
+              defects early in the testing lifecycle.
+            </p>
+          </div>
+
+          <div class="project">
+            <div class="tag">Accounting Platform</div>
+            <h3>MYOB – BankFeeds and SupplierFeeds</h3>
+            <p>
+              Contributed to automation and quality delivery for BankFeeds onboarding and SupplierFeeds,
+              supporting financial data integration capabilities for MYOB customers.
+            </p>
+            <p>
+              Also stepped into a dual BA and QA role for six months and received the Best Individual Contributor
+              award for business division impact.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
